@@ -18,8 +18,14 @@
     },
       
     loadResources: function () {
-      this.load.image('player', 'assets/player.png');
-      this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
+        this.load.image('player', 'assets/sprites/player.png');
+    	this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
+	this.load.tilemap('map', 'assets/tilemaps/maps/features_test.json', null, Phaser.Tilemap.TILED_JSON);
+	this.load.image('ground_1x1', 'assets/tilemaps/tiles/ground_1x1.png');
+	this.load.image('walls_1x2', 'assets/tilemaps/tiles/walls_1x2.png');
+	this.load.image('tiles2', 'assets/tilemaps/tiles/tiles2.png');
+        this.load.image('phaser', 'assets/sprites/arrow.png');
+        this.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32);
     },
 
     create: function () {
@@ -28,7 +34,8 @@
 
     update: function () {
       if (!!this.ready) {
-        this.game.state.start('menu');
+      //  this.game.state.start('menu');
+	this.game.state.start('game'); //go direct to game instead of menu during dev...
       }
     },
 
