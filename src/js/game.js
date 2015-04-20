@@ -40,8 +40,11 @@
             this.coins.callAll('animations.play', 'animations', 'spin');
 
             /*ADD PLAYER SPRITE*/
-            this.player = this.add.sprite(260, 100, 'player');
+            this.player = this.add.sprite(260, 100, 'subsheet');
+            this.player.frame = 1;
             this.player.anchor.set(0.5);
+            this.player.width = this.player.width /2;  //TODO figure out how to scale....
+            this.player.height = this.player.height /2;
 
             this.game.physics.arcade.enable(this.player);
 
