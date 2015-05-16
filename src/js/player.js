@@ -9,8 +9,11 @@
         this.game.physics.arcade.enable(this);
         this.body.setSize(this.width/2, this.height/2,this.width/8,  this.height/4);
         this.body.collideWorldBounds = true;
-        this.body.maxAngular = 500;
-        this.body.angularDrag = 50;
+        this.body.maxAngular = 100; //controls rotation speed
+        this.body.angularDrag = 5;
+        this.body.bounce = 0.9;
+        this.body.mass = 2;
+
     }
     Player.prototype = Object.create(Phaser.Sprite.prototype);
     Player.prototype.constructor = Player;
