@@ -1,27 +1,358 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'yo',
+1 verbose cli   'generator-phaser' ]
 2 info using npm@1.4.28
-3 info using node@v0.10.33
+3 info using node@v0.10.38
 4 verbose node symlink /usr/bin/node
-5 verbose run-script [ 'prestart', 'start', 'poststart' ]
-6 info prestart subfun@0.0.0
-7 info start subfun@0.0.0
-8 verbose unsafe-perm in lifecycle true
-9 info subfun@0.0.0 Failed to exec start script
-10 error subfun@0.0.0 start: `node ./node_modules/gulp/bin/gulp.js`
-10 error Exit status 8
-11 error Failed at the subfun@0.0.0 start script.
-11 error This is most likely a problem with the subfun package,
-11 error not with npm itself.
-11 error Tell the author that this fails on your system:
-11 error     node ./node_modules/gulp/bin/gulp.js
-11 error You can get their info via:
-11 error     npm owner ls subfun
-11 error There is likely additional logging output above.
-12 error System Linux 3.13.0-43-generic
-13 error command "/usr/bin/node" "/usr/bin/npm" "start"
-14 error cwd /home/johan/workspace/subfun
-15 error node -v v0.10.33
-16 error npm -v 1.4.28
-17 error code ELIFECYCLE
-18 verbose exit [ 1, true ]
+5 verbose cache add [ 'yo', null ]
+6 verbose cache add name=undefined spec="yo" args=["yo",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'yo',
+7 verbose parsed url   path: 'yo',
+7 verbose parsed url   href: 'yo' }
+8 verbose cache add [ 'generator-phaser', null ]
+9 verbose cache add name=undefined spec="generator-phaser" args=["generator-phaser",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'generator-phaser',
+10 verbose parsed url   path: 'generator-phaser',
+10 verbose parsed url   href: 'generator-phaser' }
+11 silly lockFile c41975d1-yo yo
+12 verbose lock yo /home/johan/.npm/c41975d1-yo.lock
+13 silly lockFile c125ecf4-generator-phaser generator-phaser
+14 verbose lock generator-phaser /home/johan/.npm/c125ecf4-generator-phaser.lock
+15 silly lockFile c41975d1-yo yo
+16 silly lockFile c41975d1-yo yo
+17 silly lockFile c125ecf4-generator-phaser generator-phaser
+18 silly lockFile c125ecf4-generator-phaser generator-phaser
+19 verbose addNamed [ 'yo', '' ]
+20 verbose addNamed [ null, '*' ]
+21 silly lockFile d937c28e-yo yo@
+22 verbose lock yo@ /home/johan/.npm/d937c28e-yo.lock
+23 verbose addNamed [ 'generator-phaser', '' ]
+24 verbose addNamed [ null, '*' ]
+25 silly lockFile a2db31fc-generator-phaser generator-phaser@
+26 verbose lock generator-phaser@ /home/johan/.npm/a2db31fc-generator-phaser.lock
+27 silly addNameRange { name: 'yo', range: '*', hasData: false }
+28 verbose request where is /yo
+29 verbose request registry https://registry.npmjs.org/
+30 verbose request id 98ded5be3780e59d
+31 verbose url raw /yo
+32 verbose url resolving [ 'https://registry.npmjs.org/', './yo' ]
+33 verbose url resolved https://registry.npmjs.org/yo
+34 verbose request where is https://registry.npmjs.org/yo
+35 info trying registry request attempt 1 at 10:14:01
+36 http GET https://registry.npmjs.org/yo
+37 silly addNameRange { name: 'generator-phaser', range: '*', hasData: false }
+38 verbose request where is /generator-phaser
+39 verbose request registry https://registry.npmjs.org/
+40 verbose url raw /generator-phaser
+41 verbose url resolving [ 'https://registry.npmjs.org/', './generator-phaser' ]
+42 verbose url resolved https://registry.npmjs.org/generator-phaser
+43 verbose request where is https://registry.npmjs.org/generator-phaser
+44 info trying registry request attempt 1 at 10:14:01
+45 http GET https://registry.npmjs.org/generator-phaser
+46 http 200 https://registry.npmjs.org/generator-phaser
+47 silly registry.get cb [ 200,
+47 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+47 silly registry.get     etag: '"E6KFAXUZYZDKCD2LWLL8DUUGG"',
+47 silly registry.get     'content-type': 'application/json',
+47 silly registry.get     'cache-control': 'max-age=60',
+47 silly registry.get     'content-length': '41231',
+47 silly registry.get     'accept-ranges': 'bytes',
+47 silly registry.get     date: 'Thu, 14 May 2015 08:14:02 GMT',
+47 silly registry.get     via: '1.1 varnish',
+47 silly registry.get     age: '0',
+47 silly registry.get     connection: 'keep-alive',
+47 silly registry.get     'x-served-by': 'cache-fra1234-FRA',
+47 silly registry.get     'x-cache': 'MISS',
+47 silly registry.get     'x-cache-hits': '0',
+47 silly registry.get     'x-timer': 'S1431591242.121472,VS0,VE211',
+47 silly registry.get     vary: 'Accept' } ]
+48 silly addNameRange number 2 { name: 'generator-phaser', range: '*', hasData: true }
+49 silly addNameRange versions [ 'generator-phaser',
+49 silly addNameRange   [ '0.0.1',
+49 silly addNameRange     '0.0.2',
+49 silly addNameRange     '0.0.3',
+49 silly addNameRange     '0.0.4',
+49 silly addNameRange     '0.0.5',
+49 silly addNameRange     '0.0.6',
+49 silly addNameRange     '0.0.7',
+49 silly addNameRange     '0.0.8',
+49 silly addNameRange     '0.0.9',
+49 silly addNameRange     '0.10.0',
+49 silly addNameRange     '0.11.0',
+49 silly addNameRange     '0.13.0',
+49 silly addNameRange     '0.14.0',
+49 silly addNameRange     '0.15.0',
+49 silly addNameRange     '0.16.0',
+49 silly addNameRange     '0.17.0',
+49 silly addNameRange     '0.18.0',
+49 silly addNameRange     '0.19.0',
+49 silly addNameRange     '0.20.0',
+49 silly addNameRange     '0.21.0',
+49 silly addNameRange     '0.22.0',
+49 silly addNameRange     '0.23.0',
+49 silly addNameRange     '0.24.0',
+49 silly addNameRange     '0.25.0',
+49 silly addNameRange     '0.26.0',
+49 silly addNameRange     '0.27.0',
+49 silly addNameRange     '0.28.0' ] ]
+50 verbose addNamed [ 'generator-phaser', '0.28.0' ]
+51 verbose addNamed [ '0.28.0', '0.28.0' ]
+52 silly lockFile 8c6cf19d-generator-phaser-0-28-0 generator-phaser@0.28.0
+53 verbose lock generator-phaser@0.28.0 /home/johan/.npm/8c6cf19d-generator-phaser-0-28-0.lock
+54 silly lockFile 72c006f3-aser-generator-phaser-0-28-0-tgz https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+55 verbose lock https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz /home/johan/.npm/72c006f3-aser-generator-phaser-0-28-0-tgz.lock
+56 verbose addRemoteTarball [ 'https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz',
+56 verbose addRemoteTarball   '62a4d125db281c69764171a22f8713044950843f' ]
+57 info retry fetch attempt 1 at 10:14:02
+58 verbose fetch to= /tmp/npm-7767-CWZxgfts/registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+59 http GET https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+60 http 200 https://registry.npmjs.org/yo
+61 silly registry.get cb [ 200,
+61 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+61 silly registry.get     etag: '"23G3S1WNPQZLOEV5UTILJLCMO"',
+61 silly registry.get     'content-type': 'application/json',
+61 silly registry.get     'cache-control': 'max-age=60',
+61 silly registry.get     'content-length': '31118',
+61 silly registry.get     'accept-ranges': 'bytes',
+61 silly registry.get     date: 'Thu, 14 May 2015 08:14:02 GMT',
+61 silly registry.get     via: '1.1 varnish',
+61 silly registry.get     age: '0',
+61 silly registry.get     connection: 'keep-alive',
+61 silly registry.get     'x-served-by': 'cache-ams4132-AMS',
+61 silly registry.get     'x-cache': 'HIT',
+61 silly registry.get     'x-cache-hits': '1',
+61 silly registry.get     'x-timer': 'S1431591242.066436,VS0,VE371',
+61 silly registry.get     vary: 'Accept' } ]
+62 silly addNameRange number 2 { name: 'yo', range: '*', hasData: true }
+63 silly addNameRange versions [ 'yo',
+63 silly addNameRange   [ '1.1.0',
+63 silly addNameRange     '1.1.1',
+63 silly addNameRange     '1.1.2',
+63 silly addNameRange     '1.2.0',
+63 silly addNameRange     '1.2.1',
+63 silly addNameRange     '1.3.0',
+63 silly addNameRange     '1.3.2',
+63 silly addNameRange     '1.3.3',
+63 silly addNameRange     '1.4.6' ] ]
+64 verbose addNamed [ 'yo', '1.4.6' ]
+65 verbose addNamed [ '1.4.6', '1.4.6' ]
+66 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+67 verbose lock yo@1.4.6 /home/johan/.npm/10fcef76-yo-1-4-6.lock
+68 silly lockFile 5ba8706e-gistry-npmjs-org-yo-yo-1-4-6-tgz https://registry.npmjs.org/yo/-/yo-1.4.6.tgz
+69 verbose lock https://registry.npmjs.org/yo/-/yo-1.4.6.tgz /home/johan/.npm/5ba8706e-gistry-npmjs-org-yo-yo-1-4-6-tgz.lock
+70 verbose addRemoteTarball [ 'https://registry.npmjs.org/yo/-/yo-1.4.6.tgz',
+70 verbose addRemoteTarball   '16e03e9af7be4805ef6142cdbb1d15f33504b37b' ]
+71 info retry fetch attempt 1 at 10:14:02
+72 verbose fetch to= /tmp/npm-7767-CWZxgfts/registry.npmjs.org/yo/-/yo-1.4.6.tgz
+73 http GET https://registry.npmjs.org/yo/-/yo-1.4.6.tgz
+74 http 200 https://registry.npmjs.org/yo/-/yo-1.4.6.tgz
+75 silly lockFile 5ba8706e-gistry-npmjs-org-yo-yo-1-4-6-tgz https://registry.npmjs.org/yo/-/yo-1.4.6.tgz
+76 silly lockFile 5ba8706e-gistry-npmjs-org-yo-yo-1-4-6-tgz https://registry.npmjs.org/yo/-/yo-1.4.6.tgz
+77 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+78 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+79 silly lockFile d937c28e-yo yo@
+80 silly lockFile d937c28e-yo yo@
+81 http 200 https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+82 silly lockFile 72c006f3-aser-generator-phaser-0-28-0-tgz https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+83 silly lockFile 72c006f3-aser-generator-phaser-0-28-0-tgz https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz
+84 silly lockFile 8c6cf19d-generator-phaser-0-28-0 generator-phaser@0.28.0
+85 silly lockFile 8c6cf19d-generator-phaser-0-28-0 generator-phaser@0.28.0
+86 silly lockFile a2db31fc-generator-phaser generator-phaser@
+87 silly lockFile a2db31fc-generator-phaser generator-phaser@
+88 silly resolved [ { name: 'yo',
+88 silly resolved     version: '1.4.6',
+88 silly resolved     description: 'CLI tool for running Yeoman generators',
+88 silly resolved     license: 'BSD',
+88 silly resolved     bin: { yo: 'lib/cli.js' },
+88 silly resolved     author: { name: 'Yeoman team' },
+88 silly resolved     repository: { type: 'git', url: 'https://github.com/yeoman/yo' },
+88 silly resolved     engines: { node: '>=0.10.0', npm: '>=2.1.0' },
+88 silly resolved     scripts:
+88 silly resolved      { test: 'jshint . && mocha test/**/*.js',
+88 silly resolved        postinstall: 'yodoctor',
+88 silly resolved        postupdate: 'yodoctor',
+88 silly resolved        prepublish: 'nsp audit-package' },
+88 silly resolved     files: [ 'lib' ],
+88 silly resolved     keywords:
+88 silly resolved      [ 'cli-app',
+88 silly resolved        'cli',
+88 silly resolved        'bin',
+88 silly resolved        'front-end',
+88 silly resolved        'development',
+88 silly resolved        'dev',
+88 silly resolved        'build',
+88 silly resolved        'web',
+88 silly resolved        'tool',
+88 silly resolved        'scaffold',
+88 silly resolved        'stack',
+88 silly resolved        'yeoman',
+88 silly resolved        'generator',
+88 silly resolved        'generate',
+88 silly resolved        'app',
+88 silly resolved        'boilerplate' ],
+88 silly resolved     dependencies:
+88 silly resolved      { 'array-uniq': '^1.0.2',
+88 silly resolved        async: '^0.9.0',
+88 silly resolved        chalk: '^1.0.0',
+88 silly resolved        configstore: '^0.3.1',
+88 silly resolved        'cross-spawn': '^0.2.3',
+88 silly resolved        figures: '^1.3.5',
+88 silly resolved        findup: '^0.1.5',
+88 silly resolved        fullname: '^1.0.0',
+88 silly resolved        got: '^2.4.0',
+88 silly resolved        'humanize-string': '^1.0.0',
+88 silly resolved        inquirer: '^0.8.0',
+88 silly resolved        insight: '^0.5.0',
+88 silly resolved        lodash: '^3.2.0',
+88 silly resolved        meow: '^3.0.0',
+88 silly resolved        'npm-keyword': '^1.1.1',
+88 silly resolved        opn: '^1.0.0',
+88 silly resolved        'package-json': '^1.1.0',
+88 silly resolved        'root-check': '^1.0.0',
+88 silly resolved        'sort-on': '^1.0.0',
+88 silly resolved        'string-length': '^1.0.0',
+88 silly resolved        titleize: '^1.0.0',
+88 silly resolved        'update-notifier': '^0.3.0',
+88 silly resolved        'user-home': '^1.1.0',
+88 silly resolved        'yeoman-character': '^1.0.0',
+88 silly resolved        'yeoman-doctor': '^1.0.0',
+88 silly resolved        'yeoman-environment': '^1.0.1',
+88 silly resolved        yosay: '^1.0.0' },
+88 silly resolved     devDependencies:
+88 silly resolved      { jshint: '^2.5.11',
+88 silly resolved        mocha: '^2.1.0',
+88 silly resolved        mockery: '^1.4.0',
+88 silly resolved        nock: '^0.59.1',
+88 silly resolved        nsp: '*',
+88 silly resolved        proxyquire: '^1.0.1',
+88 silly resolved        'registry-url': '^3.0.0',
+88 silly resolved        sinon: '^1.12.1' },
+88 silly resolved     preferGlobal: true,
+88 silly resolved     gitHead: '987fe12a608e7b6318c2563a6140583e796d9db5',
+88 silly resolved     bugs: { url: 'https://github.com/yeoman/yo/issues' },
+88 silly resolved     homepage: 'https://github.com/yeoman/yo',
+88 silly resolved     _id: 'yo@1.4.6',
+88 silly resolved     _shasum: '16e03e9af7be4805ef6142cdbb1d15f33504b37b',
+88 silly resolved     _from: 'yo@',
+88 silly resolved     _npmVersion: '1.4.28',
+88 silly resolved     _npmUser: { name: 'sindresorhus', email: 'sindresorhus@gmail.com' },
+88 silly resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+88 silly resolved     dist:
+88 silly resolved      { shasum: '16e03e9af7be4805ef6142cdbb1d15f33504b37b',
+88 silly resolved        tarball: 'http://registry.npmjs.org/yo/-/yo-1.4.6.tgz' },
+88 silly resolved     directories: {},
+88 silly resolved     _resolved: 'https://registry.npmjs.org/yo/-/yo-1.4.6.tgz' },
+88 silly resolved   { name: 'generator-phaser',
+88 silly resolved     version: '0.28.0',
+88 silly resolved     description: 'A Yeoman generator to generate HTML5 games with phaser.js',
+88 silly resolved     keywords: [ 'yeoman-generator', 'phaser' ],
+88 silly resolved     homepage: 'https://github.com/julien/generator-phaser',
+88 silly resolved     bugs: { url: 'https://github.com/julien/generator-phaser/issues' },
+88 silly resolved     author:
+88 silly resolved      { name: 'Julien Castelain',
+88 silly resolved        email: 'jcastelain@gmail.com',
+88 silly resolved        url: 'https://github.com/julien' },
+88 silly resolved     contributors:
+88 silly resolved      [ [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object],
+88 silly resolved        [Object] ],
+88 silly resolved     main: 'app/index.js',
+88 silly resolved     files: [ 'app' ],
+88 silly resolved     repository:
+88 silly resolved      { type: 'git',
+88 silly resolved        url: 'git://github.com/julien/generator-phaser.git' },
+88 silly resolved     scripts: { test: 'mocha' },
+88 silly resolved     dependencies: { 'yeoman-generator': '~0.16.0', chalk: '~0.4.0' },
+88 silly resolved     devDependencies: { mocha: '*' },
+88 silly resolved     peerDependencies: { yo: '>=1.0.0' },
+88 silly resolved     engines: { node: '>=0.8.0', npm: '>=1.2.10' },
+88 silly resolved     licenses: [ [Object] ],
+88 silly resolved     gitHead: '3ba0cd3b2944475894ec0fa19831e265de0b0e34',
+88 silly resolved     _id: 'generator-phaser@0.28.0',
+88 silly resolved     _shasum: '62a4d125db281c69764171a22f8713044950843f',
+88 silly resolved     _from: 'generator-phaser@',
+88 silly resolved     _npmVersion: '2.7.0',
+88 silly resolved     _nodeVersion: '1.5.1',
+88 silly resolved     _npmUser: { name: 'jcastelain', email: 'jcastelain@gmail.com' },
+88 silly resolved     maintainers: [ [Object] ],
+88 silly resolved     dist:
+88 silly resolved      { shasum: '62a4d125db281c69764171a22f8713044950843f',
+88 silly resolved        tarball: 'http://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz' },
+88 silly resolved     directories: {},
+88 silly resolved     _resolved: 'https://registry.npmjs.org/generator-phaser/-/generator-phaser-0.28.0.tgz' } ]
+89 info install yo@1.4.6 into /usr/lib
+90 info install generator-phaser@0.28.0 into /usr/lib
+91 info installOne yo@1.4.6
+92 warn engine yo@1.4.6: wanted: {"node":">=0.10.0","npm":">=2.1.0"} (current: {"node":"0.10.38","npm":"1.4.28"})
+93 info installOne generator-phaser@0.28.0
+94 verbose lib/node_modules/yo unbuild
+95 verbose lib/node_modules/generator-phaser unbuild
+96 verbose tar unpack /home/johan/.npm/yo/1.4.6/package.tgz
+97 silly lockFile 7bedd6dc-tar-usr-lib-node-modules-yo tar:///usr/lib/node_modules/yo
+98 verbose lock tar:///usr/lib/node_modules/yo /home/johan/.npm/7bedd6dc-tar-usr-lib-node-modules-yo.lock
+99 silly lockFile 53552774-e-johan-npm-yo-1-4-6-package-tgz tar:///home/johan/.npm/yo/1.4.6/package.tgz
+100 verbose lock tar:///home/johan/.npm/yo/1.4.6/package.tgz /home/johan/.npm/53552774-e-johan-npm-yo-1-4-6-package-tgz.lock
+101 verbose tar unpack /home/johan/.npm/generator-phaser/0.28.0/package.tgz
+102 silly lockFile 731eeeb0-ib-node-modules-generator-phaser tar:///usr/lib/node_modules/generator-phaser
+103 verbose lock tar:///usr/lib/node_modules/generator-phaser /home/johan/.npm/731eeeb0-ib-node-modules-generator-phaser.lock
+104 silly lockFile 12a5df13-erator-phaser-0-28-0-package-tgz tar:///home/johan/.npm/generator-phaser/0.28.0/package.tgz
+105 verbose lock tar:///home/johan/.npm/generator-phaser/0.28.0/package.tgz /home/johan/.npm/12a5df13-erator-phaser-0-28-0-package-tgz.lock
+106 silly gunzTarPerm modes [ '775', '664' ]
+107 silly gunzTarPerm modes [ '775', '664' ]
+108 error Error: EACCES, mkdir '/usr/lib/node_modules/yo'
+108 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/yo']
+108 error   errno: 3,
+108 error   code: 'EACCES',
+108 error   path: '/usr/lib/node_modules/yo',
+108 error   fstream_type: 'Directory',
+108 error   fstream_path: '/usr/lib/node_modules/yo',
+108 error   fstream_class: 'DirWriter',
+108 error   fstream_stack:
+108 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+108 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+108 error      'Object.oncomplete (fs.js:108:15)' ] }
+109 error Please try running this command again as root/Administrator.
+110 error System Linux 3.19.0-16-generic
+111 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "yo" "generator-phaser"
+112 error cwd /home/johan/workspace/subfun
+113 error node -v v0.10.38
+114 error npm -v 1.4.28
+115 error path /usr/lib/node_modules/yo
+116 error fstream_path /usr/lib/node_modules/yo
+117 error fstream_type Directory
+118 error fstream_class DirWriter
+119 error code EACCES
+120 error errno 3
+121 error stack Error: EACCES, mkdir '/usr/lib/node_modules/yo'
+122 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+122 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+122 error fstream_stack Object.oncomplete (fs.js:108:15)
+123 verbose exit [ 3, true ]
