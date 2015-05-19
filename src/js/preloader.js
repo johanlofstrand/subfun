@@ -26,6 +26,9 @@
         this.load.spritesheet('coin', 'assets/sprites/coin.png', 32, 32);
         this.load.atlasJSONHash('sprites', 'assets/sprites.png', 'assets/sprites.json');
         this.load.audio('bgm', ['assets/sounds/bgm.mp3']);
+        this.load.image('compass', 'assets/sprites/compass_rose.png');
+        this.load.image('touch_segment', 'assets/sprites/touch_segment.png');
+        this.load.image('touch', 'assets/sprites/touch.png');
     },
 
     create: function () {
@@ -35,12 +38,16 @@
     update: function () {
       if (!!this.ready) {
       //  this.game.state.start('menu');
+          //TESTA  if (this.cache.isSoundDecoded('bgm')
          this.game.state.start('game'); //go direct to game instead of menu during dev...
       }
     },
 
     onLoadComplete: function () {
-      this.ready = true;
+
+
+
+        this.ready = true;
     }
   };
 

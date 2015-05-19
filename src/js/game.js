@@ -10,6 +10,13 @@
         this.seashells = null;
         this.seagrass = null;
         this.background = null;
+        this.direction = null;
+        this.touchControls = null;
+        this.rotationDirection = 0;
+    }
+
+    var easeInSpeed = function(x){
+        return x * Math.abs(x) / 2000;
     }
 
     Game.prototype = {
@@ -38,9 +45,13 @@
             this.addObjectsToMap(map);
             /*ADD KEYS*/
             this.cursors = this.game.input.keyboard.createCursorKeys();
+           // this.touchControls = this.game.input.pointer1;
+            this.touchControl = this.game.plugins.add(Phaser.Plugin.TouchControl);
+            this.touchControl.inputEnable();
+            this.touchControl.settings.singleDirection = false;
 
             /*ADD PLAYER SPRITE*/
-            this.player = new subfun.Player(this.game,260,350);//this.add.sprite(260, 100, 'subsheet');
+            this.player = new subfun.Player(this.game,300,350);//this.add.sprite(260, 100, 'subsheet');
             this.game.add.existing(this.player);
 
             /*ADD CAMERA*/
@@ -51,42 +62,64 @@
             music.play();
 
         },
+
+        updateDebugText: function(){
+            console.log('directions: {\n  up: ' + this.touchControl.cursors.up +
+                ',\n  down: ' + this.touchControl.cursors.down + ',\n  left: ' + this.touchControl.cursors.left +
+                ',\n  right: ' + this.touchControl.cursors.right + ',\n}');
+            console.log('velocity: {\n  x: ' + this.touchControl.speed.x + ',\n  y: ' + this.touchControl.speed.y + '\n}');
+
+        },
+
         update: function () {
-            var x, y, cx, cy, dx, dy, angle, scale;
+            var speed = this.touchControl.speed;
 
-          //  this.background.tilePosition.x -= 1;
-
-            x = this.input.position.x;
-            y = this.input.position.y;
-            cx = this.world.centerX;
-            cy = this.world.centerY;
-
+            this.player.y -= easeInSpeed(speed.y);
+            this.player.x -= easeInSpeed(speed.x);
+            console.log("sx: " + speed.x + " sy: " + speed.y);
 
             this.game.physics.arcade.collide(this.player, this.layer);
-            this.game.physics.arcade.overlap(this.player, this.coins, this.collectCoin, null, this);
+           // this.game.physics.arcade.overlap(this.player, this.coins, this.collectCoin, null, this);
 
             this.player.updatePhysics();
 
-            if (this.cursors.left.isDown)
+            if (this.cursors.left.isDown || this.touchControl.cursors.left )
             {
-                this.player.body.angularVelocity = -300;
+                //this.player.body.angularVelocity = -30;
+                this.player.x--;
+                this.rotationDirection = 1;
+             //   this.rotationSpeed = 0.001;
+            }
+            else if (this.cursors.right.isDown || this.touchControl.cursors.right)
+            {
+                //this.player.body.angularVelocity = 30;
+                this.player.x++;
+                this.rotationDirection = -1;
+               // this.rotationSpeed = 0.001;
+            }
 
-            }
-            else if (this.cursors.right.isDown)
+            if (this.cursors.down.isDown || this.touchControl.cursors.down)
             {
-                this.player.body.angularVelocity = 300;
+               // this.game.physics.arcade.velocityFromAngle(this.player.angle, 300, this.player.body.velocity);
+                this.player.y++;
+                this.player.rotation = (speed.y / 100) * this.rotationDirection;
+                this.rotationDirection = -1;
+            }
+            else if (this.cursors.up.isDown || this.touchControl.cursors.up)
+            {
+                // this.game.physics.arcade.velocityFromAngle(this.player.angle, 300, this.player.body.velocity);
+                this.player.y--;
+                this.player.rotation = (speed.y / 100) * this.rotationDirection;
+                this.rotationDirection = 1;
             }
 
-            if (this.cursors.up.isDown)
-            {
-                this.game.physics.arcade.velocityFromAngle(this.player.angle, 300, this.player.body.velocity);
-            }
+
+            this.player.body.velocity = speed;
+
+
 
         },
 
-        onInputDown: function () {
-            this.game.state.start('menu');
-        },
 
         collectCoin: function(player,coin) {
             coin.kill();
