@@ -2,13 +2,15 @@
     'use strict';
 
     function Player(game, x,y) {
-        Phaser.Sprite.call(this,game,x,y,'subsheet');
+        Phaser.Sprite.call(this,game,x,y,'sprites','sub_blue_r.png');
         this.game = game;
-        this.frame = 1;
         this.anchor.set(0.5);
-        this.game.physics.arcade.enable(this);
-        this.body.setSize(this.width/2, this.height/2,this.width/8,  this.height/4);
+        this.game.physics.p2.enable(this);
+        this.body.setCircle(5);
+       // this.body.setSize(this.width/2, this.height/2,this.width/8,  this.height/4);
         this.body.collideWorldBounds = true;
+        this.animations.add('left',['sub_blue_l.png'],15,true);
+        this.animations.add('right',['sub_blue_r.png'],15,true);
       //  this.body.maxAngular = 100; //controls rotation speed
       //  this.body.angularDrag = 50;
     //    this.body.bounce = 0.9;
@@ -18,16 +20,13 @@
     }
     Player.prototype = Object.create(Phaser.Sprite.prototype);
     Player.prototype.constructor = Player;
-
     Player.prototype.updatePhysics = function() {
-        //Needs to be called early in game update method, and hence here instead of in Sub's update method...
-      //  this.body.velocity.x = 0;
-        //this.body.velocity.y = 0;
-       // this.body.angularVelocity = 0;
-     //   this.body.angle = 0;
+
     };
 
     Player.prototype.update = function() {
+        this.body.setZeroVelocity(); //To handle collisions in a controled way.
+
     };
 
     window['subfun'] = window['subfun'] || {};
